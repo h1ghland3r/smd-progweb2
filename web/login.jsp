@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <head>
   <title>PW2 - Trabalho Final</title>
   <meta charset="utf-8">
@@ -18,7 +19,7 @@
         <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
+        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
@@ -34,20 +35,20 @@
           <h2 class="text-center">Controle de Estoque</h2>
           <h4 class="text-center sm-margin-top">Login</h4>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <h6 class="text-right md-margin">Não é cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
-            <form>
+            <h6 class="text-right md-margin">NÃ£o Ã© cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
+            <s:form action="login" method="post">
               <div class="form-group">
-                <label for="email">Login:</label>
-                <input type="email" class="form-control" id="login" name="login">
+                <label for="login">Login:</label>
+                <s:textfield name="usuario.login" id="login" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <s:password name="usuario.senha" id="senha" class="form-control"/>
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-default">Acessar</button>
+                <s:submit class="btn btn-default" value="Acessar"/>
               </div>
-            </form>
+            </s:form>
           </div>
         </div>
       </div>
