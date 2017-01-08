@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <head>
   <title>PW2 - Trabalho Final</title>
   <meta charset="utf-8">
@@ -18,7 +19,7 @@
         <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
+        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
@@ -34,23 +35,22 @@
         <div class="lg-margin-top">
           <h2 class="text-center">Cadastro</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <h6></h6>
-            <s:form action="cadastro" method="post">
+            <s:form action="AddCliente" method="post">
               <div class="form-group">
                 <label for="nome">Nome:</label>
-                <s:textfield name="usuario.nome" id="nome" class="form-control"/>
+                <s:textfield name="nome" id="nome" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="email">E-mail:</label>
-                <s:textfield name="usuario.email" id="email" class="form-control"/>
+                <s:textfield name="email" id="email" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="login">Login:</label>
-                <s:textfield name="usuario.login" id="email" class="form-control"/>
+                <s:textfield name="login" id="email" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <s:password name="usuario.senha" id="senha" class="form-control"/>
+                <s:password name="senha" id="senha" class="form-control"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-default" value="Cadastrar"/>

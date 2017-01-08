@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <head>
   <title>PW2 - Trabalho Final</title>
   <meta charset="utf-8">
@@ -18,7 +19,7 @@
         <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
+        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
@@ -45,8 +46,8 @@
                 <th>ID</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
-                <th>Valor Unitário</th>
-                <th>Ações</th>
+                <th>Valor UnitÃ¡rio</th>
+                <th>AÃ§Ãµes</th>
               </tr>
             </thead>
             <tbody>
