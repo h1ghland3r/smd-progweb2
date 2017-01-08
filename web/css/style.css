@@ -1,0 +1,46 @@
+/* STRUCTURE */
+
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+}
+
+.sm-margin {margin-bottom: 15px;}
+.sm-margin-top {margin-top: 15px;}
+.md-margin {margin-bottom: 30px;}
+.md-margin-top {margin-top: 30px;}
+.lg-margin {margin-bottom: 60px;}
+.lg-margin-top {margin-top: 60px;}
+
+.no-padding {padding: 0;}
+.no-padding-left {padding-left: 0;}
+.no-padding-right {padding-right: 0;}
+.padding-15 {padding-left: 15px; padding-right: 15px;}
+
+.p-bold {font-weight: bold;}
+.p-italic{font-style: italic;}
+
+/* Navbar */
+.navbar {
+	border-radius: 0;
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+}
+
+@media screen and (max-width: 360px) {
+}
