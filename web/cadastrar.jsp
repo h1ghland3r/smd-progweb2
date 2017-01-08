@@ -15,7 +15,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">PW2 - Trabalho Final</a>
+        <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Início</a></li> -->
@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
         <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></span>Logar</a></li> -->
-        <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>
+        <li><a href="/ProgWeb2_TF/home"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>
       </ul>
     </div>
   </nav>
@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Tela de Cadastro</h2>
+          <h2 class="text-center">Cadastro</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
             <form>
               <div class="form-group">
@@ -51,7 +51,9 @@
                 <label for="pwd">Senha:</label>
                 <input type="password" class="form-control" id="password" name="password">
               </div>
-              <button type="submit" class="btn btn-default">Cadastrar</button>
+              <div class="text-right">
+                <button type="submit" class="btn btn-default">Cadastrar</button>
+              </div>
             </form>
           </div>
         </div>

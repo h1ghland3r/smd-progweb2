@@ -7,8 +7,11 @@
     <constant name="struts.multipart.maxSize" value="53477376" />
     <constant name="struts.ui.theme" value="simple" />
     <package name="default" extends="struts-default">
-        <action name="index">
+        <action name="home">
             <result>/login.jsp</result>
+        </action>
+        <action name="cadastro">
+            <result>/cadastrar.jsp</result>
         </action>
 <!--        <action name="listarPerfil" class="actions.ListarPerfilAction">
             <result name="sucesso">listarPerfil.jsp</result>
