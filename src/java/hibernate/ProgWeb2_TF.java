@@ -11,7 +11,6 @@ import entidades.Produto;
 import entidades.Venda;
 import entidades.Venda_Item;
 import java.util.Date;
-import javafx.scene.chart.PieChart.Data;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.Connection;
@@ -41,23 +40,27 @@ public class ProgWeb2_TF {
         
         /* Produto */
         Produto p = new Produto();
-        p.setDescricao("Placa Video");
-        p.setPreco(1205.21);
+        p.setDescricao("PC");
+        p.setPreco(500.0);
+        p.setQuantidade("5");
         
-        /* Venda - Verificar data*/
+        /* Venda */
         Venda v = new Venda();
         v.setData(new Date());
         
         /* Venda_Item */
         Venda_Item i = new Venda_Item();
+        i.setProduto(p);
         i.setQuantidade(5);
+        i.setVenda(v);
         
         Transaction t = session.beginTransaction();
         session.save(a);
         session.save(c);
+        session.save(p);
         session.save(v);
         session.save(i);
-        session.save(p);
+        
         t.commit();
         
         session.close();

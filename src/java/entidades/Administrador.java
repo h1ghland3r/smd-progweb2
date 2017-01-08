@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,6 +24,7 @@ public class Administrador implements Serializable{
     
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
@@ -34,7 +36,7 @@ public class Administrador implements Serializable{
     @Column(name = "email")
     private String email;
     
-    @Column(name = "login", unique = true)
+    @Column(name = "login")
     private String login;
 
     @Column(name = "senha")

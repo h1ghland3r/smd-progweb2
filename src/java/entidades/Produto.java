@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,6 +25,7 @@ public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
@@ -40,15 +42,6 @@ public class Produto implements Serializable {
 
     public Produto() {
         
-    }
-
-    public Produto(Integer id) {
-        this.id = id;
-    }
-
-    public Produto(Integer id, String descricao) {
-        this.id = id;
-        this.descricao = descricao;
     }
 
     public Integer getId() {
@@ -71,7 +64,7 @@ public class Produto implements Serializable {
         return quantidade;
     }
 
-    public void setQuantidade(String email) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
