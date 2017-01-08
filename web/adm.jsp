@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <head>
   <title>PW2 - Trabalho Final</title>
   <meta charset="utf-8">
@@ -18,7 +19,7 @@
         <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
+        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
@@ -37,12 +38,16 @@
             <div class="row">
               <div class="col-lg-2"></div>
               <div class="col-lg-4 text-center">
-                <img src="img/300x200.png" class="sm-margin" />
-                <h6 class=""><a href="adm_prod.jsp">Cadastro de Produtos</a></h6>
+                <a href="adm_prod.jsp">
+                    <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
+                    <h6 class="">Cadastro de Produtos</h6>
+                </a>
               </div>
               <div class="col-lg-4 text-center">
-                <img src="img/300x200.png" class="sm-margin" />
-                <h6 class=""><a href="adm_vendas.jsp">Cadastro de Vendas</a></h6>
+                <a href="adm_vendas.jsp">
+                    <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
+                    <h6 class="">Cadastro de Vendas</h6>
+                </a>
               </div>
               <div class="col-lg-2"></div>
             </div>

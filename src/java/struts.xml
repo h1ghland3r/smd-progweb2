@@ -13,11 +13,17 @@
         <action name="cadastro">
             <result>/cadastrar.jsp</result>
         </action>
-<!--        <action name="listarPerfil" class="actions.ListarPerfilAction">
-            <result name="sucesso">listarPerfil.jsp</result>
+        <action name="adm">
+            <result>/adm.jsp</result>
         </action>
-        <action name="adicionarUsuario" class="actions.AdicionarUsuarioAction">
-            <result name="sucesso" type="redirectAction">listarUsuarios.action</result>
+        <action name="AddCliente" class="actions.AddClienteAction">
+            <result name="success" type="redirect">home</result>
+        </action>
+<!--    <action name="delete" class="dao.clienteDAO" method="delete">
+            <result name="success" type="chain">/login.jsp</result>
+        </action>-->
+<!--    <action name="listarPerfil" class="actions.ListarPerfilAction">
+            <result name="sucesso">listarPerfil.jsp</result>
         </action>
         <action name="atualizarUsuario" class="actions.AtualizarUsuarioAction">
             <result name="sucesso" type="redirectAction">listarUsuarios.action</result>

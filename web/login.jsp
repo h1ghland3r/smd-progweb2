@@ -39,11 +39,11 @@
             <s:form action="login" method="post">
               <div class="form-group">
                 <label for="login">Login:</label>
-                <s:textfield name="usuario.login" id="login" class="form-control"/>
+                <s:textfield name="login" id="login" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <s:password name="usuario.senha" id="senha" class="form-control"/>
+                <s:password name="senha" id="senha" class="form-control"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-default" value="Acessar"/>
