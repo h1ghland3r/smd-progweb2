@@ -34,27 +34,28 @@
         <div class="lg-margin-top">
           <h2 class="text-center">Cadastro</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <form>
+            <h6></h6>
+            <s:form action="cadastro" method="post">
               <div class="form-group">
-                <label for="email">Nome:</label>
-                <input type="email" class="form-control" id="nome" name="nome">
+                <label for="nome">Nome:</label>
+                <s:textfield name="usuario.nome" id="nome" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <s:textfield name="usuario.email" id="email" class="form-control"/>
               </div>
               <div class="form-group">
-                <label for="email">Login:</label>
-                <input type="email" class="form-control" id="login" name="login">
+                <label for="login">Login:</label>
+                <s:textfield name="usuario.login" id="email" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <s:password name="usuario.senha" id="senha" class="form-control"/>
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-default">Cadastrar</button>
+                <s:submit class="btn btn-default" value="Cadastrar"/>
               </div>
-            </form>
+            </s:form>
           </div>
         </div>
       </div>
