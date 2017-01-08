@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <title>PW2 - Trabalho Final</title>
@@ -18,13 +18,13 @@
         <a class="navbar-brand" href="#">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
+        <!-- <li class="active"><a href="#">Início</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logar</a></li> -->
-        <li><a href="login.jsp"><i class="fa fa-user-circle" aria-hidden="true"></i></span> Cliente</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i></span> Sair</a></li>
+        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
+        <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Cliente</a></li>
+        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
       </ul>
     </div>
   </nav>
@@ -50,7 +50,6 @@
                       <option>Produto C</option>
                     </select>
                   </div>
-                </row>
               </div>
               <div class="form-group">
                 <div class="row">
@@ -78,15 +77,15 @@
       <div class="col-lg-12">
         <h2 class="text-center">Produtos adicionados a listagem</h2>
         <p class="p-bold md-margin-top">2. Conferir o pedido</p>
-        <p class="p-italic md-margin-top">*VocÃª pode remover um produto da lista de compras clicando no botÃ£o remover.</p>
+        <p class="p-italic md-margin-top">*Você pode remover um produto da lista de compras clicando no botão remover.</p>
         <table class="table table-hover table-responsive md-margin-top">
           <thead>
             <tr>
               <th>Produto</th>
               <th>Quantidade</th>
-              <th>Valor UnitÃ¡rio</th>
+              <th>Valor Unitário</th>
               <th>Valor Total</th>
-              <th>AÃ§Ãµes</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
