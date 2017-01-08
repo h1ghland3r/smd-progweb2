@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <title>PW2 - Trabalho Final</title>
@@ -18,12 +18,12 @@
         <a class="navbar-brand" href="#">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
+        <!-- <li class="active"><a href="#">Início</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logar</a></li> -->
-        <li><a href="#"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></span> Voltar</a></li>
+        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i></span>Logar</a></li> -->
+        <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>
       </ul>
     </div>
   </nav>

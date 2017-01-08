@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
+    
 <head>
   <title>PW2 - Trabalho Final</title>
   <meta charset="utf-8">
@@ -18,11 +18,11 @@
         <a class="navbar-brand" href="#">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">InÃ­cio</a></li> -->
+        <!-- <li class="active"><a href="#">Início</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logar</a></li> -->
+        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
       </ul>
     </div>
   </nav>
@@ -33,7 +33,7 @@
         <div class="lg-margin-top">
           <h2 class="text-center">Tela de Login</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <h6 class="text-right md-margin">NÃ£o Ã© cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
+            <h6 class="text-right md-margin">Não é cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
             <form>
               <div class="form-group">
                 <label for="email">Login:</label>
