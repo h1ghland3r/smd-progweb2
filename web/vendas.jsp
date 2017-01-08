@@ -15,7 +15,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">PW2 - Trabalho Final</a>
+        <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Início</a></li> -->
@@ -33,8 +33,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Tela de Vendas + Listagem de Produtos</h2>
-
+          <h2 class="text-center">Controle de Estoque</h2>
+          <h4 class="text-center sm-margin-top">Vendas e Listagem de Produtos</h4>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
             <p class="p-bold md-margin">1. Escolha de produto</p>
             <form>
