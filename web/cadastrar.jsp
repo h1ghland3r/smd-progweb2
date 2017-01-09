@@ -46,7 +46,7 @@
               </div>
               <div class="form-group">
                 <label for="login">Login:</label>
-                <s:textfield name="login" id="email" class="form-control"/>
+                <s:textfield name="login" id="login" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>

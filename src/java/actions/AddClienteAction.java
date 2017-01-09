@@ -9,11 +9,15 @@ import entidades.Cliente;
 import dao.ClienteDAO;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Session;
 
 /**
  * @author Railan
  */
 public class AddClienteAction extends ActionSupport {
+    
+    Session session;
+    
     Cliente cliente = new Cliente();
     List<Cliente> clientes = new ArrayList<Cliente>();
     ClienteDAO dao = new ClienteDAO();
