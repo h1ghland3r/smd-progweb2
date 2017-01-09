@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/actions/AddClienteAction.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/struts.xml</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/cadastrar.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/dao/ClienteDAO.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/util/Connection.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/login.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
