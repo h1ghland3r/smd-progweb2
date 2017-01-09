@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 </head>
 
-<body class="bg-image">
+<body>
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
