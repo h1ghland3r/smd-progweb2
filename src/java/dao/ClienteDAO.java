@@ -24,6 +24,44 @@ public class ClienteDAO {
     
     private Cliente cliente;
     
+    private Integer id;
+    private String nome;
+    private String email;
+    private String login;
+    private String senha;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
     public List<Cliente> list() {
         
         Session sesssion = Connection.getSession();
@@ -37,26 +75,34 @@ public class ClienteDAO {
             session.getTransaction().rollback();
         }
         
-        session.getTransaction().commit();
+        Transaction t = session.beginTransaction();
+        t.commit();
         return clientes;
     }
     
     public Cliente add(Cliente cliente) {
         Session session = Connection.getSession();
-        session.beginTransaction();
+        cliente.setNome(nome);
+        cliente.setEmail(email);
+        cliente.setLogin(login);
+        cliente.setSenha(senha);
+        System.out.println("Ei, lê eu aqui!!!!" + cliente);
+
+        Transaction t = session.beginTransaction();
         session.save(cliente);
-        session.getTransaction().commit();
+        t.commit();
+        session.close();
         return cliente;
     }
     
     public Cliente delete(Integer id) {
         Session session = Connection.getSession();
-        session.beginTransaction();
+        Transaction t = session.beginTransaction();
         Cliente cliente = (Cliente) session.load(Cliente.class, id);
             if (null != cliente) {
                 session.delete(cliente);
             }
-        session.getTransaction().commit();
+        t.commit();
         return cliente;
     }
     
