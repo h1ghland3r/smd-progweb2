@@ -18,7 +18,7 @@ public class AddClienteAction extends ActionSupport {
     
     Session session;
     
-    Cliente cliente = new Cliente();
+    private Cliente cliente = new Cliente();
     List<Cliente> clientes = new ArrayList<Cliente>();
     ClienteDAO dao = new ClienteDAO();
 
@@ -69,6 +69,11 @@ public class AddClienteAction extends ActionSupport {
     }
     
     public String execute() {
+        cliente.setNome(nome);
+        cliente.setEmail(email);
+        cliente.setLogin(login);
+        cliente.setSenha(senha);
+        
         dao.add(cliente);
         return "success";
     }

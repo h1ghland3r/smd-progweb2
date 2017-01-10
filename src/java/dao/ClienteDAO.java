@@ -24,44 +24,6 @@ public class ClienteDAO {
     
     private Cliente cliente;
     
-    private Integer id;
-    private String nome;
-    private String email;
-    private String login;
-    private String senha;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-    
     public List<Cliente> list() {
         
         Session sesssion = Connection.getSession();
@@ -82,12 +44,6 @@ public class ClienteDAO {
     
     public Cliente add(Cliente cliente) {
         Session session = Connection.getSession();
-        cliente.setNome(nome);
-        cliente.setEmail(email);
-        cliente.setLogin(login);
-        cliente.setSenha(senha);
-        System.out.println("Ei, lê eu aqui!!!!" + cliente);
-
         Transaction t = session.beginTransaction();
         session.save(cliente);
         t.commit();
