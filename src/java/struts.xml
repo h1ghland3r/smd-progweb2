@@ -22,6 +22,9 @@
         <action name="AddCliente" class="actions.AddClienteAction">
             <result name="success" type="redirect">/registro_sucesso.jsp</result>
         </action>
+        <action name="AddProduto" class="actions.AddProduto">
+            <result name="success" type="redirect">/registro_sucesso.jsp</result>
+        </action>
 <!--    <action name="delete" class="dao.clienteDAO" method="delete">
             <result name="success" type="chain">/login.jsp</result>
         </action>-->

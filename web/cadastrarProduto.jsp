@@ -1,3 +1,9 @@
+<%-- 
+    Document   : cadastrarProduto
+    Created on : 15/01/2017, 11:24:16
+    Author     : italo
+--%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,24 +25,20 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Cadastro de Usuarios</h2>
+          <h2 class="text-center">Cadastro de Produtos</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <s:form action="AddCliente" method="post">
+            <s:form action="AddProduto" method="post">
               <div class="form-group">
-                <label for="nome">Nome:</label>
-                <s:textfield name="nome" id="nome" class="form-control"/>
+                <label for="descricao">Descrição:</label>
+                <s:textfield name="descricao" id="descricao" class="form-control"/>
               </div>
               <div class="form-group">
-                <label for="email">E-mail:</label>
-                <s:textfield name="email" id="email" class="form-control"/>
+                <label for="quantidade">Quantidade:</label>
+                <s:textfield name="quantidade" id="quantidade" class="form-control"/>
               </div>
               <div class="form-group">
-                <label for="login">Login:</label>
-                <s:textfield name="login" id="login" class="form-control"/>
-              </div>
-              <div class="form-group">
-                <label for="pwd">Senha:</label>
-                <s:password name="senha" id="senha" class="form-control"/>
+                <label for="preco">Preço:</label>
+                <s:textfield name="preco" id="preco" class="form-control"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-default" value="Cadastrar"/>
