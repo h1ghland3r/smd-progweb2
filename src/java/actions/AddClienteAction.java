@@ -19,7 +19,6 @@ public class AddClienteAction extends ActionSupport {
     Session session;
     
     private Cliente cliente = new Cliente();
-    List<Cliente> clientes = new ArrayList<Cliente>();
     ClienteDAO dao = new ClienteDAO();
 
     private Integer id;

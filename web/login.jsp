@@ -36,7 +36,7 @@
           <h4 class="text-center sm-margin-top">Login</h4>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
             <h6 class="text-right md-margin">Não é cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
-            <s:form action="login" method="post">
+            <s:form action="Login" method="post">
               <div class="form-group">
                 <label for="login">Login:</label>
                 <s:textfield name="login" id="login" class="form-control"/>
@@ -46,7 +46,7 @@
                 <s:password name="senha" id="senha" class="form-control"/>
               </div>
               <div class="text-right">
-                <s:submit class="btn btn-default" value="Acessar"/>
+                <s:submit class="btn btn-default" id="submit" value="Acessar"/>
               </div>
             </s:form>
           </div>
@@ -54,5 +54,4 @@
       </div>
     </div>
   </div>
-      
 <%@include file="footer.jsp" %>
