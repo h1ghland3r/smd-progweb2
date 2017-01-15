@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="entidades.Produto"%>
+<%@page import="dao.ProdutoDAO"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +21,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
+        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Início</a></li> -->
@@ -24,6 +29,9 @@
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
         <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
+        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+        <li><a href="#"><i class="fa fa-barcode" aria-hidden="true"></i> Produtos</a></li>
+        <li><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Vendas</a></li>
         <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
         <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
       </ul>
@@ -36,10 +44,10 @@
         <div class="lg-margin-top">
           <h2 class="text-center lg-margin">Modo Administrador - Tela de Consulta de Produtos</h2>
 
-          <button type="submit" class="btn btn-default md-margin">Incluir produto</button>
+          <a href="cadastrarProduto.jsp"><button type="submit" class="btn btn-default md-margin">Incluir produto</button></a>
 
           <h3 class="text-left md-margin">Listagem de produtos cadastrados</h3>
-
+          
           <table class="table table-hover table-responsive md-margin-top">
             <thead>
               <tr>
