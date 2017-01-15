@@ -11,6 +11,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
+import org.hibernate.query.Query;
 import util.Connection;
 
 /**
@@ -26,12 +27,12 @@ public class ClienteDAO {
     
     public List<Cliente> list() {
         
-        Session sesssion = Connection.getSession();
+        Session session = Connection.getSession();
         session.beginTransaction();
         List<Cliente> clientes = null;
         
         try {
-            clientes = (List<Cliente>) session.createQuery("from cliente").list();
+            clientes = (List<Cliente>) session.createQuery("FROM Cliente").list();
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
@@ -40,6 +41,24 @@ public class ClienteDAO {
         Transaction t = session.beginTransaction();
         t.commit();
         return clientes;
+    }
+    
+    public Cliente validacaoLogin (String login, String senha) {
+        Session session = Connection.getSession();
+        Transaction t = session.beginTransaction();
+        
+        try {
+            Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
+            query.setParameter("login", login);
+            query.setParameter("senha", senha);
+            cliente = (Cliente) query.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        t.commit();
+        session.close();
+        return cliente;
     }
     
     public Cliente add(Cliente cliente) {
@@ -59,6 +78,7 @@ public class ClienteDAO {
                 session.delete(cliente);
             }
         t.commit();
+        session.close();
         return cliente;
     }
     

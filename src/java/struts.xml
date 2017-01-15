@@ -16,6 +16,9 @@
         <action name="adm">
             <result>/adm.jsp</result>
         </action>
+        <action name="Login" class="actions.LoginAction">
+            <result name="success" type="redirect">/vendas.jsp</result>
+        </action>
         <action name="AddCliente" class="actions.AddClienteAction">
             <result name="success" type="redirect">/registro_sucesso.jsp</result>
         </action>
