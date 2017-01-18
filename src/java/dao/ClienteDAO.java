@@ -6,24 +6,26 @@
 package dao;
 
 import entidades.Cliente;
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 import util.Connection;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
  * @author Railan
  */
+
 public class ClienteDAO {
     
     Session session;
     Transaction transaction;
     
-    private Cliente cliente;
+    private Cliente cliente;	
     
     public List<Cliente> list() {
         
@@ -64,6 +66,7 @@ public class ClienteDAO {
     public boolean validacaoLogin (String login, String senha) {
         Session session = Connection.getSession();
        
+//        session.persist("logado", "true");
         Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
         query.setParameter("login", login);
         query.setParameter("senha", senha);

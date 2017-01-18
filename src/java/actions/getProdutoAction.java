@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package actions;
+
 import com.opensymphony.xwork2.ActionSupport;
 import dao.ProdutoDAO;
 import entidades.Produto;
@@ -13,9 +14,9 @@ import org.hibernate.Session;
 
 /**
  *
- * @author italo
+ * @author Railan
  */
-public class AddProduto extends ActionSupport {
+public class getProdutoAction extends ActionSupport {
     
     Session session;
     
@@ -25,7 +26,7 @@ public class AddProduto extends ActionSupport {
     
     private Integer id;
     private String descricao;
-    private Integer quantidade;
+    private String quantidade;
     private Double preco;
 
     public Integer getId() {
@@ -44,15 +45,13 @@ public class AddProduto extends ActionSupport {
         this.descricao = descricao;
     }
 
-    public Integer getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
-
-    
 
     public double getPreco() {
         return preco;
@@ -63,11 +62,12 @@ public class AddProduto extends ActionSupport {
     }
     
     public String execute() {
-        produto.setDescricao(descricao);
-        produto.setQuantidade(quantidade);
-        produto.setPreco(preco);
-        
-        dao.add(produto);
+        produto.getId();
+        produto.getDescricao();
+        produto.getPreco();
+        produto.getQuantidade();
+        dao.list();
         return "success";
     }
+
 }

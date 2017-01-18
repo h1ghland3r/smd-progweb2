@@ -19,16 +19,15 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-            <h4 class="text-center sm-margin-top">Bem vindo, <s:property value="login"/> concluído com sucesso.</h4>
+            <h4 class="text-center sm-margin-top">Bem vindo, <s:property value="login"/>.</h4>
         </div>
       </div>
     </div>
     <div class="row">
         <div class="col-lg-12 text-center lg-margin-top">
-            <a href="#">
-                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <h6 class="">Realizar Pedido</h6>
-            </a>
+            <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
+            <s:url action="ListaProduto.action" var="listarProdutos" />
+            <s:a href="%{listarProdutos}"><h6>Realizar Pedido</h6></s:a>
         </div>
     </div>
   </div>

@@ -33,16 +33,16 @@ public class ProgWeb2_TF {
         
         /* Cliente */
         Cliente c = new Cliente();
-        c.setNome("Cliente1");
+        c.setNome("Cliente");
         c.setEmail("Cliente1@gmail.com");
-        c.setLogin("Cliente1");
+        c.setLogin("Cliente");
         c.setSenha("Cliente123");
         
         /* Produto */
         Produto p = new Produto();
         p.setDescricao("PC");
         p.setPreco(500.0);
-        p.setQuantidade("5");
+        p.setQuantidade(5);
         
         /* Venda */
         Venda v = new Venda();

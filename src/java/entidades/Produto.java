@@ -35,7 +35,7 @@ public class Produto implements Serializable {
     private String descricao;
     
     @Column(name = "quantidade")
-    private String quantidade;
+    private Integer quantidade;
     
     @Column(name = "preco")
     private Double preco;
@@ -60,11 +60,11 @@ public class Produto implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(String quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 

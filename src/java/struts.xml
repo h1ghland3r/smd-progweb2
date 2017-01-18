@@ -28,6 +28,12 @@
         <action name="AddProduto" class="actions.AddProduto">
             <result name="success" type="redirect">/registro_sucesso.jsp</result>
         </action>
+        <action name="ListaProduto" class="actions.ProdutoAction" method="execute">
+            <result name="success">/vendas.jsp</result>
+        </action>
+        <action name="AddItem" class="actions.ProdutoAction" method="addItem">
+            <result name="success">/vendas.jsp</result>
+        </action>
 <!--    <action name="delete" class="dao.clienteDAO" method="delete">
             <result name="success" type="chain">/login.jsp</result>
         </action>-->
