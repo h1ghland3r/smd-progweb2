@@ -84,5 +84,9 @@ public class Cliente implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }    
+
+    public boolean getLogin(String login) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

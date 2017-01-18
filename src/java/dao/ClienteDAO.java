@@ -6,13 +6,14 @@
 package dao;
 
 import entidades.Cliente;
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 import util.Connection;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ClienteDAO {
     Session session;
     Transaction transaction;
     
-    private Cliente cliente;
+    private Cliente cliente;	
     
     public List<Cliente> list() {
         
@@ -38,27 +39,42 @@ public class ClienteDAO {
             session.getTransaction().rollback();
         }
         
-        Transaction t = session.beginTransaction();
-        t.commit();
+        session.getTransaction().commit();
+        session.close();
         return clientes;
     }
     
-    public Cliente validacaoLogin (String login, String senha) {
+    public Cliente getByLogin(String login) {
+        
         Session session = Connection.getSession();
-        Transaction t = session.beginTransaction();
+        session.beginTransaction();
+        Cliente cliente = null;
         
         try {
-            Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
-            query.setParameter("login", login);
-            query.setParameter("senha", senha);
-            cliente = (Cliente) query.uniqueResult();
-        } catch (Exception e) {
+            cliente = (Cliente) session.get(Cliente.class, login);
+        } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-        t.commit();
+        
+        session.getTransaction().commit();
         session.close();
         return cliente;
+    }
+    
+    public boolean validacaoLogin (String login, String senha) {
+        Session session = Connection.getSession();
+//        session.persist("logado", "true");
+        Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
+        query.setParameter("login", login);
+        query.setParameter("senha", senha);
+        List<Cliente> list = query.list();
+        if (list.size() > 0) {
+            session.close();
+            return true;
+        }
+        session.close();
+        return false;
     }
     
     public Cliente add(Cliente cliente) {
@@ -72,12 +88,12 @@ public class ClienteDAO {
     
     public Cliente delete(Integer id) {
         Session session = Connection.getSession();
-        Transaction t = session.beginTransaction();
+        session.beginTransaction();
         Cliente cliente = (Cliente) session.load(Cliente.class, id);
             if (null != cliente) {
                 session.delete(cliente);
             }
-        t.commit();
+        session.getTransaction().commit();
         session.close();
         return cliente;
     }

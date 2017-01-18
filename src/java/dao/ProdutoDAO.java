@@ -5,8 +5,8 @@
  */
 package dao;
 
+import entidades.Cliente;
 import entidades.Produto;
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -26,21 +26,40 @@ public class ProdutoDAO {
     
     public List<Produto> list() {
         
-        Session sesssion = Connection.getSession();
-        session.beginTransaction();
+        Session session = Connection.getSession();
+        Transaction tx = session.beginTransaction();
         List<Produto> produtos = null;
         
         try {
-            produtos = (List<Produto>) session.createQuery("from produto").list();
+            produtos = (List<Produto>) session.createCriteria(Produto.class).list();
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
         
-        Transaction t = session.beginTransaction();
-        t.commit();
+        tx.commit();
+        session.close();
         return produtos;
         
+    }
+    
+        
+    public Produto getById(Integer id) {
+        
+        Session session = Connection.getSession();
+        session.beginTransaction();
+        Produto produto = null;
+        
+        try {
+            produto = (Produto) session.get(Produto.class, id);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        
+        session.getTransaction().commit();
+        session.close();
+        return produto;
     }
     
     public Produto add(Produto produto) {
