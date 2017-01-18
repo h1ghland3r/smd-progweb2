@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%@page contentType="text/html" pageEncoding="UTF-8"%>
-    <%@taglib prefix="s" uri="/struts-tags" %> 
-    <head>
-        <title>PW2 - Trabalho Final</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-    </head>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
+<head>
+  <title>PW2 - Trabalho Final</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+</head>
 
-    <body>
-        <%@include file="header.jsp" %>
+<body>
+<%@include file="header.jsp" %>
 
-        <div class="container">
+  <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="lg-margin-top">
@@ -61,15 +61,15 @@
                     <div class="col-lg-12">
                         <h2 class="text-center">Produtos adicionados a listagem</h2>
                         <p class="p-bold md-margin-top">2. Conferir o pedido</p>
-                        <p class="p-italic md-margin-top">*VocÃª pode remover um produto da lista de compras clicando no botÃ£o remover.</p>
+                        <p class="p-italic md-margin-top">*Você pode remover um produto da lista de compras clicando no botão remover.</p>
                         <table class="table table-hover table-responsive md-margin-top">
                             <thead>
                                 <tr>
                                     <th>Produto</th>
                                     <th>Quantidade</th>
-                                    <th>Valor UnitÃ¡rio</th>
+                                    <th>Valor Unitário</th>
                                     <th>Valor Total</th>
-                                    <th>AÃ§Ãµes</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -10,21 +10,20 @@ import dao.ClienteDAO;
 import entidades.Cliente;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import org.apache.struts2.ServletActionContext;
+import javax.servlet.ServletContext;
+import org.hibernate.SessionFactory;
 
 /**
  *
  * @author Railan
  */
 public class ClienteAction extends ActionSupport {
-
+    
     private Cliente cliente = new Cliente();
     List<Cliente> clientes = new ArrayList<Cliente>();
     ClienteDAO dao = new ClienteDAO();
     private String login, senha;
-
+    
     public Cliente getModel() {
         return cliente;
     }
@@ -60,20 +59,17 @@ public class ClienteAction extends ActionSupport {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    
     public String list() {
         clientes = dao.list();
         return SUCCESS;
     }
-
-    public String execute() {
-        if (dao.validacaoLogin(getLogin(), getSenha())) {
-     //       HttpServletRequest request = ServletActionContext.getRequest();
-   //         HttpSession session = request.getSession();
- //           session.setAttribute("", );
+    
+    public String execute() {  
+        if (dao.validacaoLogin(getLogin(), getSenha())) { 
             return "success";
         }
         return "error";
     }
-
+   
 }

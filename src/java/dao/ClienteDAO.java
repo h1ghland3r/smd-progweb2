@@ -19,6 +19,7 @@ import org.apache.struts2.ServletActionContext;
  *
  * @author Railan
  */
+
 public class ClienteDAO {
     
     Session session;
@@ -64,6 +65,7 @@ public class ClienteDAO {
     
     public boolean validacaoLogin (String login, String senha) {
         Session session = Connection.getSession();
+       
 //        session.persist("logado", "true");
         Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
         query.setParameter("login", login);
