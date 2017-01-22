@@ -24,19 +24,19 @@
             <s:form action="AddCliente" method="post">
               <div class="form-group">
                 <label for="nome">Nome:</label>
-                <s:textfield name="nome" id="nome" class="form-control"/>
+                <s:textfield name="nome" id="nome" class="form-control" required="required"/>
               </div>
-              <div class="form-group">
+              <div class="form-group email">
                 <label for="email">E-mail:</label>
-                <s:textfield name="email" id="email" class="form-control"/>
+                <s:textfield name="email" id="email" class="form-control" onkeyup="validate()" required="required"/>
               </div>
               <div class="form-group">
                 <label for="login">Login:</label>
-                <s:textfield name="login" id="login" class="form-control"/>
+                <s:textfield name="login" id="login" class="form-control" required="required"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <s:password name="senha" id="senha" class="form-control"/>
+                <s:password name="senha" id="senha" class="form-control" required="required"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-default" value="Cadastrar"/>
@@ -47,5 +47,5 @@
       </div>
     </div>
   </div>
-
+  <script src="js/validation.js"></script>
 <%@include file="footer.jsp" %>

@@ -61,15 +61,15 @@
                     <div class="col-lg-12">
                         <h2 class="text-center">Produtos adicionados a listagem</h2>
                         <p class="p-bold md-margin-top">2. Conferir o pedido</p>
-                        <p class="p-italic md-margin-top">*Você pode remover um produto da lista de compras clicando no botão remover.</p>
+                        <p class="p-italic md-margin-top">*VocÃª pode remover um produto da lista de compras clicando no botÃ£o remover.</p>
                         <table class="table table-hover table-responsive md-margin-top">
                             <thead>
                                 <tr>
                                     <th>Produto</th>
                                     <th>Quantidade</th>
-                                    <th>Valor Unitário</th>
+                                    <th>Valor UnitÃ¡rio</th>
                                     <th>Valor Total</th>
-                                    <th>Ações</th>
+                                    <th>AÃ§Ãµes</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -114,5 +114,5 @@
                     </div>
                 </div>
             </div>
-
-    </body>
+   </div>
+</body>
