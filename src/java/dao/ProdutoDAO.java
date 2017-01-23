@@ -71,15 +71,15 @@ public class ProdutoDAO {
         return produto;
     }
     
-    public Produto delete(Integer id) {
+    public void delete(Produto id) {
         Session session = Connection.getSession();
         Transaction t = session.beginTransaction();
-        Produto produto = (Produto) session.load(Produto.class, id);
-            if (null != produto) {
-                session.delete(produto);
+        Produto p = (Produto) session.load(Produto.class, id);
+            if (p != null) {
+                session.delete(p);
             }
         t.commit();
-        return produto;
+        session.close();
     }
     
 }

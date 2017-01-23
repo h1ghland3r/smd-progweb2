@@ -34,17 +34,8 @@
         <action name="AddItem" class="actions.ProdutoAction" method="addItem">
             <result name="success">/vendas.jsp</result>
         </action>
-<!--    <action name="delete" class="dao.clienteDAO" method="delete">
-            <result name="success" type="chain">/login.jsp</result>
-        </action>-->
-<!--    <action name="listarPerfil" class="actions.ListarPerfilAction">
-            <result name="sucesso">listarPerfil.jsp</result>
+        <action name="RemoveItem" class="actions.ProdutoAction" method="removeItem">
+            <result name="success">/vendas.jsp</result>
         </action>
-        <action name="atualizarUsuario" class="actions.AtualizarUsuarioAction">
-            <result name="sucesso" type="redirectAction">listarUsuarios.action</result>
-        </action>
-        <action name="deletarUsuario" class="actions.DeletarUsuarioAction">
-            <result name="sucesso" type="redirectAction">listarUsuarios.action</result>
-        </action>-->
     </package>
 </struts>

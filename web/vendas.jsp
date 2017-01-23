@@ -79,25 +79,9 @@
                                         <td><s:property value="#f.getQuantidade()" /></td>
                                         <td><s:property value="#f.getPreco()" /></td>
                                         <td class="p-bold"><s:property value="#f.getPreco() * #f.getQuantidade()"/></td>
-                                        <td><button type="submit" class="btn btn-danger">Remover</button></td>
+                                        <td><s:form action="RemoveItem"><s:submit class="btn btn-danger" value="Remover" /></s:form></td>
                                     </tr>
                                 </s:iterator>
-                                <!--
-                                <tr>
-                                  <td>Produto B</td>
-                                  <td>7</td>
-                                  <td>R$ 5,00</td>
-                                  <td class="p-bold">R$ 35,00</td>
-                                  <td><button type="submit" class="btn btn-danger">Remover</button></td>
-                                </tr>
-                                <tr>
-                                  <td>Produto C</td>
-                                  <td>1</td>
-                                  <td>R$ 150,00</td>
-                                  <td class="p-bold">R$ 150,00</td>
-                                  <td><button type="submit" class="btn btn-danger">Remover</button></td>
-                                </tr>
-                                -->
                             </tbody>
                         </table>
                     </div>
