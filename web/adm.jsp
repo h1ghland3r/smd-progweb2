@@ -18,13 +18,8 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
       </div>
-      <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
-        <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
+        <li><a href="login_adm.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
         <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
       </ul>
     </div>
@@ -38,14 +33,14 @@
             <div class="row">
               <div class="col-lg-2"></div>
               <div class="col-lg-4 text-center">
+                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
                 <a href="adm_prod.jsp">
-                    <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
                     <h6 class="">Cadastro de Produtos</h6>
                 </a>
               </div>
               <div class="col-lg-4 text-center">
+                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
                 <a href="adm_vendas.jsp">
-                    <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
                     <h6 class="">Cadastro de Vendas</h6>
                 </a>
               </div>

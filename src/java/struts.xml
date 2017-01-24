@@ -10,11 +10,11 @@
         <action name="home">
             <result>/login.jsp</result>
         </action>
+        <action name="LoginAdm" class="actions.AdministradorAction" method="execute">
+            <result name="success">/adm.jsp</result>
+        </action>
         <action name="cadastro">
             <result>/cadastrar.jsp</result>
-        </action>
-        <action name="adm">
-            <result>/adm.jsp</result>
         </action>
         <action name="Login" class="actions.ClienteAction" method="execute">
             <result name="success">/login_sucesso.jsp</result>

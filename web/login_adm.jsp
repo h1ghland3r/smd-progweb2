@@ -32,11 +32,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Controle de Estoque</h2>
+          <h2 class="text-center">Painel Administrativo</h2>
           <h4 class="text-center sm-margin-top">Login</h4>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <h6 class="text-right md-margin">Não é cliente? Cadastre-se agora clicando <a href="cadastrar.jsp">aqui.</a></h6>
-            <s:form action="Login" method="post">
+            <s:form action="LoginAdm" method="post">
               <div class="form-group">
                 <label for="login">Login:</label>
                 <s:textfield name="login" id="login" class="form-control" required="required"/>
@@ -51,11 +50,6 @@
             </s:form>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12">
-          <div class="box-admin md-margin-top">
-            <h6 class="text-center padding-10-box"><a href="login_adm.jsp">Acesso Administrador</a></h6>      
-          </div>
       </div>
     </div>
   </div>

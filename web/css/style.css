@@ -29,13 +29,23 @@ a:hover {
 .no-padding-left {padding-left: 0;}
 .no-padding-right {padding-right: 0;}
 .padding-15 {padding-left: 15px; padding-right: 15px;}
-
+.padding-10-box {padding: 10px 0;}
 .p-bold {font-weight: bold;}
 .p-italic{font-style: italic;}
 
 /* Navbar */
 .navbar {
     border-radius: 0;
+}
+
+/* Admin */
+
+.box-admin {
+    border: 2px dashed #9b2929;
+}
+
+.box-admin a {
+    color: #9b2929;
 }
 
 /* Rodape */
