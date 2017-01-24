@@ -69,7 +69,7 @@ public class ClienteAction extends ActionSupport {
         if (dao.validacaoLogin(getLogin(), getSenha())) { 
             return "success";
         }
-        return "error";
+        return "login ou senha incorretos";
     }
    
 }

@@ -39,11 +39,11 @@
             <s:form action="Login" method="post">
               <div class="form-group">
                 <label for="login">Login:</label>
-                <s:textfield name="login" id="login" class="form-control"/>
+                <s:textfield name="login" id="login" class="form-control" required="required"/>
               </div>
               <div class="form-group">
                 <label for="pwd">Senha:</label>
-                <s:password name="senha" id="senha" class="form-control"/>
+                <s:password name="senha" id="senha" class="form-control" required="required"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-default" id="submit" value="Acessar"/>
@@ -51,6 +51,11 @@
             </s:form>
           </div>
         </div>
+      </div>
+      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12">
+          <div class="box-admin md-margin-top">
+            <h6 class="text-center padding-10-box"><a href="login_adm.jsp">Acesso Administrador</a></h6>      
+          </div>
       </div>
     </div>
   </div>

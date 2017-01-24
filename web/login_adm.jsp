@@ -12,24 +12,30 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 </head>
 
-<body>
-<%@include file="header.jsp" %>
+<body class="bg-image">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Início</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Cadastro de Usuarios</h2>
+          <h2 class="text-center">Painel Administrativo</h2>
+          <h4 class="text-center sm-margin-top">Login</h4>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <s:form action="AddCliente" method="post">
-              <div class="form-group">
-                <label for="nome">Nome:</label>
-                <s:textfield name="nome" id="nome" class="form-control" required="required"/>
-              </div>
-              <div class="form-group email">
-                <label for="email">E-mail:</label>
-                <s:textfield name="email" id="email" class="form-control" onkeyup="validate()" required="required"/>
-              </div>
+            <s:form action="LoginAdm" method="post">
               <div class="form-group">
                 <label for="login">Login:</label>
                 <s:textfield name="login" id="login" class="form-control" required="required"/>
@@ -39,7 +45,7 @@
                 <s:password name="senha" id="senha" class="form-control" required="required"/>
               </div>
               <div class="text-right">
-                <s:submit class="btn btn-default" value="Cadastrar"/>
+                <s:submit class="btn btn-default" id="submit" value="Acessar"/>
               </div>
             </s:form>
           </div>
@@ -47,5 +53,4 @@
       </div>
     </div>
   </div>
-  <script src="js/validation.js"></script>
 <%@include file="footer.jsp" %>

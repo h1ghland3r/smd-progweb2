@@ -5,6 +5,7 @@
  */
 package actions;
 
+import com.opensymphony.xwork2.ActionSupport;
 import dao.ProdutoDAO;
 import entidades.Produto;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import org.apache.struts2.ServletActionContext;
  *
  * @author aluno
  */
-public class ProdutoAction {
+public class ProdutoAction extends ActionSupport {
 
     private List<Produto> listaProdutos;
     private List<Produto> listaSelecionados;
@@ -75,6 +76,18 @@ public class ProdutoAction {
         }
         p.setQuantidade(quantidadeProduto);
         listaSelecionados.add(p);
+        session.setAttribute("listaSelecionados", listaSelecionados);
+        execute();
+        return "success";
+    }
+    
+    public String removeItem() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        ProdutoDAO dao = new ProdutoDAO();
+        Produto p = dao.getById(codigoProduto); // Esta retornando a ID como nula. Como acessar o ID entao?
+        listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
+        listaSelecionados.remove(p);
         session.setAttribute("listaSelecionados", listaSelecionados);
         execute();
         return "success";
