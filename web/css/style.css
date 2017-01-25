@@ -48,9 +48,27 @@ a:hover {
     color: #9b2929;
 }
 
+.h6, h6 {
+    font-size: 20px;
+}
+
+/* Footer */
+.navbar-inverse {
+    background-color: #ff3232;
+    border-color: #fff
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
 /* Rodape */
 #rodape{    
-    background: #000;
+    background: #ff3232;
     position: absolute;
     bottom: 0; 
     width:100%;

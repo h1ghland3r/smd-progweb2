@@ -79,7 +79,12 @@
                                         <td><s:property value="#f.getQuantidade()" /></td>
                                         <td><s:property value="#f.getPreco()" /></td>
                                         <td class="p-bold"><s:property value="#f.getPreco() * #f.getQuantidade()"/></td>
-                                        <td><s:form action="RemoveItem"><s:submit class="btn btn-danger" value="Remover" /></s:form></td>
+                                        <td>
+                                            <s:url var="removerUrl" action="RemoveItem">
+                                                <s:param name="codigoProduto"><s:property value="#f.getId()" /></s:param>
+                                            </s:url>
+                                            <s:a href="%{removerUrl}" ><s:submit class="btn btn-danger" value="Remover" /></s:a>
+                                        </td>
                                     </tr>
                                 </s:iterator>
                             </tbody>
