@@ -16,7 +16,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
+        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="login_adm.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>

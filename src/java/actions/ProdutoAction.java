@@ -84,12 +84,27 @@ public class ProdutoAction extends ActionSupport {
     public String removeItem() {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
-        ProdutoDAO dao = new ProdutoDAO();
-        Produto p = dao.getById(codigoProduto); // Esta retornando a ID como nula. Como acessar o ID entao?
-        listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
-        listaSelecionados.remove(p);
-        session.setAttribute("listaSelecionados", listaSelecionados);
+       
+        if (session.getAttribute("listaSelecionados") != null) {
+            List<Produto> listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
+            for (int i = 0; i < listaSelecionados.size(); i++) {
+                if (listaSelecionados.get(i).getId().equals(getCodigoProduto())) {
+                    listaSelecionados.remove(i);
+                    break;
+                }
+            }
+            this.listaSelecionados = listaSelecionados;
+            session.setAttribute("listaSelecionados", listaSelecionados);
+        }
+        
         execute();
+        return "success";
+    }
+    
+    public String addVenda(){
+        
+        
+        
         return "success";
     }
 }
