@@ -28,25 +28,42 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="lg-margin-top">
-          <h2 class="text-center lg-margin">Tela do Modo Administrador</h2>
+          <h2 class="text-center md-margin-top">Tela do Modo Administrador</h2>
+          <h4 class="text-center md-margin-top lg-margin">Bem vindo, <s:property value="login"/>.</h4>
             <div class="row">
-              <div class="col-lg-2"></div>
               <div class="col-lg-4 text-center">
                 <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_prod.jsp">
+                <a href="cadastrarProduto.jsp">
                     <h6 class="">Cadastro de Produtos</h6>
                 </a>
               </div>
+              <div class="col-lg-4 text-center">
+                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
+                <a href="adm_prod.jsp">
+                    <h6 class="">Consulta de Produtos</h6>
+                </a>
+              </div>
+                <div class="col-lg-4 text-center">
+                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
+                <a href="adm_prod.jsp">
+                    <h6 class="">Atualização de Produtos</h6>
+                </a>
+              </div>
+            </div>
+            <div class="row lg-margin-top">
               <div class="col-lg-4 text-center">
                 <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
                 <a href="adm_vendas.jsp">
                     <h6 class="">Cadastro de Vendas</h6>
                 </a>
               </div>
-              <div class="col-lg-2"></div>
+              <div class="col-lg-4 text-center">
+                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
+                <a href="adm_vendas.jsp">
+                    <h6 class="">Consulta de Vendas</h6>
+                </a>
+              </div>
             </div>
-        </div>
       </div>
     </div>
   </div>

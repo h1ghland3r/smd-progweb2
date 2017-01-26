@@ -47,9 +47,8 @@ a:hover {
 .box-admin a {
     color: #9b2929;
 }
-
-.h6, h6 {
-    font-size: 20px;
+h6 {
+    font-size: 18px;
 }
 
 /* Footer */
