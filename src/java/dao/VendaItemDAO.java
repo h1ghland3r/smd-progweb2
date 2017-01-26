@@ -5,7 +5,9 @@
  */
 package dao;
 
+import entidades.Produto;
 import entidades.Venda;
+import entidades.Venda_Item;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.Connection;
@@ -32,7 +34,5 @@ public class VendaItemDAO {
 //        t.commit();
 //        session.close();
 //        return vendaItem;
-//    }
-    
-    
+//    }    
 }
