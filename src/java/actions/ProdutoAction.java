@@ -102,7 +102,7 @@ public class ProdutoAction extends ActionSupport {
     }
     
     public String addVenda(){
- 
+
         return "success";
     }
 }
