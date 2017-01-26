@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/dao/VendaItemDAO.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/dao/ProdutoDAO.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/cadastrar.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/actions/ClienteAction.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/dao/ClienteDAO.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/vendas.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/login.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/login_adm.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/hibernate.cfg.xml</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/dao/AdministradorDAO.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/login_sucesso.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/web/adm.jsp</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/actions/ProdutoAction.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/hibernate/ProgWeb2_TF.java</file>
-            <file>file:/D:/Railan/Documents/NetBeansProjects/ProgWeb2_TF/src/java/actions/AdministradorAction.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
