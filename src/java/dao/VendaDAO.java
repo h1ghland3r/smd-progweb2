@@ -6,6 +6,7 @@
 package dao;
 
 import entidades.Cliente;
+import entidades.Produto;
 import entidades.Venda;
 import java.util.Date;
 import org.hibernate.Session;
@@ -33,6 +34,24 @@ public class VendaDAO {
         t.commit();
         session.close();
         return vendaId;
+    }
+    
+     public Venda getById(Integer id) {
+        
+        Session session = Connection.getSession();
+        session.beginTransaction();
+        Venda venda = null;
+        
+        try {
+            venda = (Venda) session.get(Venda.class, id);
+        } catch (org.hibernate.HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        
+        session.getTransaction().commit();
+        session.close();
+        return venda;
     }
     
     

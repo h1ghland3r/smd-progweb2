@@ -98,7 +98,10 @@
                     <div class="col-lg-12">
                         <p class="p-bold md-margin-top md-margin">3. Processar o pedido</p>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-lg btn-success">Processar pedido</button>
+                            <s:url var="addVenda" action="AddVenda">
+                                <s:param name="codigoProduto"><s:property value="#f.getId()" /></s:param>
+                            </s:url>
+                            <s:a href="%{addVenda}" ><s:submit class="btn btn-success" value="Processar Pedido" /></s:a>
                         </div>
                     </div>
                 </div>

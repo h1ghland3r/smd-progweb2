@@ -45,21 +45,21 @@ public class ProgWeb2_TF {
         p.setQuantidade(5);
         
         /* Venda */
-        Venda v = new Venda();
-        v.setData(new Date());
+        //Venda v = new Venda();
+        //v.setData(new Date());
         
         /* Venda_Item */
-        Venda_Item i = new Venda_Item();
-        i.setProduto(p);
-        i.setQuantidade(5);
-        i.setVenda(v);
+        //Venda_Item i = new Venda_Item();
+        //i.setProduto(p);
+        //i.setQuantidade(5);
+        //i.setVenda(v);
         
         Transaction t = session.beginTransaction();
         session.save(a);
         session.save(c);
         session.save(p);
-        session.save(v);
-        session.save(i);
+        //session.save(v);
+        //session.save(i);
         
         t.commit();
         

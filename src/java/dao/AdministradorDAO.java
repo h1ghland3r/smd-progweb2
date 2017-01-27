@@ -48,14 +48,22 @@ public class AdministradorDAO {
         Session session = Connection.getSession();
         session.beginTransaction();
         Administrador administrador = null;
-        
+
         try {
-            administrador = (Administrador) session.get(Administrador.class, login);
+            Query q = session.createQuery("SELECT a FROM Administrador a WHERE a.login = :login", Administrador.class);
+            q.setParameter("login", login);
+            List<Administrador> clientes = q.list();
+            for (Administrador a : clientes) {
+                if (login.equalsIgnoreCase(a.getLogin())) {
+                    administrador = a;
+                    break;
+                }
+            }
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-        
+
         session.getTransaction().commit();
         session.close();
         return administrador;

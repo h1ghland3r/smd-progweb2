@@ -12,60 +12,65 @@ import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 import util.Connection;
-import javax.servlet.http.HttpServletRequest;
-import org.apache.struts2.ServletActionContext;
 
 /**
  *
  * @author Railan
  */
-
 public class ClienteDAO {
-    
+
     Session session;
     Transaction transaction;
-    
-    private Cliente cliente;	
-    
+
+    private Cliente cliente;
+
     public List<Cliente> list() {
-        
+
         Session session = Connection.getSession();
         session.beginTransaction();
         List<Cliente> clientes = null;
-        
+
         try {
             clientes = (List<Cliente>) session.createQuery("FROM Cliente").list();
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-        
+
         session.getTransaction().commit();
         session.close();
         return clientes;
     }
-    
+
     public Cliente getByLogin(String login) {
-        
+
         Session session = Connection.getSession();
         session.beginTransaction();
         Cliente cliente = null;
-        
+
         try {
-            cliente = (Cliente) session.get(Cliente.class, login);
+            Query q = session.createQuery("SELECT c FROM Cliente c WHERE c.login = :login", Cliente.class);
+            q.setParameter("login", login);
+            List<Cliente> clientes = q.list();
+            for (Cliente c : clientes) {
+                if (login.equalsIgnoreCase(c.getLogin())) {
+                    cliente = c;
+                    break;
+                }
+            }
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-        
+
         session.getTransaction().commit();
         session.close();
         return cliente;
     }
-    
-    public boolean validacaoLogin (String login, String senha) {
+
+    public boolean validacaoLogin(String login, String senha) {
         Session session = Connection.getSession();
-       
+
 //        session.persist("logado", "true");
         Query query = session.createQuery("FROM Cliente c WHERE c.login=:login and c.senha=:senha");
         query.setParameter("login", login);
@@ -78,7 +83,7 @@ public class ClienteDAO {
         session.close();
         return false;
     }
-    
+
     public Cliente add(Cliente cliente) {
         Session session = Connection.getSession();
         Transaction t = session.beginTransaction();
@@ -87,17 +92,17 @@ public class ClienteDAO {
         session.close();
         return cliente;
     }
-    
+
     public Cliente delete(Integer id) {
         Session session = Connection.getSession();
         session.beginTransaction();
         Cliente cliente = (Cliente) session.load(Cliente.class, id);
-            if (null != cliente) {
-                session.delete(cliente);
-            }
+        if (null != cliente) {
+            session.delete(cliente);
+        }
         session.getTransaction().commit();
         session.close();
         return cliente;
     }
-    
+
 }

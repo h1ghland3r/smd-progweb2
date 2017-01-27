@@ -37,5 +37,8 @@
         <action name="RemoveItem" class="actions.ProdutoAction" method="removeItem">
             <result name="success">/vendas.jsp</result>
         </action>
+        <action name="AddVenda" class="actions.ProdutoAction" method="addVenda">
+            <result name="success">/registro_sucesso.jsp</result>
+        </action>
     </package>
 </struts>
