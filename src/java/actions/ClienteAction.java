@@ -11,6 +11,9 @@ import entidades.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.SessionFactory;
 
 /**
@@ -18,12 +21,12 @@ import org.hibernate.SessionFactory;
  * @author Railan
  */
 public class ClienteAction extends ActionSupport {
-    
+
     private Cliente cliente = new Cliente();
     List<Cliente> clientes = new ArrayList<Cliente>();
     ClienteDAO dao = new ClienteDAO();
     private String login, senha;
-    
+
     public Cliente getModel() {
         return cliente;
     }
@@ -59,17 +62,21 @@ public class ClienteAction extends ActionSupport {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+
     public String list() {
         clientes = dao.list();
         return SUCCESS;
     }
-    
-    public String execute() {  
-        if (dao.validacaoLogin(getLogin(), getSenha())) { 
+
+    public String execute() {
+        if (dao.validacaoLogin(getLogin(), getSenha())) {
+            HttpServletRequest request = ServletActionContext.getRequest();
+            HttpSession session = request.getSession();
+            Cliente c = dao.getByLogin(getLogin());
+            session.setAttribute("cliente", c);
             return "success";
         }
         return "login ou senha incorretos";
     }
-   
+
 }

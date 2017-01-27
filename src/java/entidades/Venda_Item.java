@@ -23,34 +23,33 @@ public class Venda_Item implements Serializable{
     
     private static final long serialVersionUID = 1L;
     @Id
-    @OneToOne
-    @JoinColumn(name="venda_id")
-    private Venda venda;
+    @Column(name = "venda_id")
+    private Integer venda;
     
     @Id
-    @OneToOne
-    @JoinColumn(name="produto_id")
-    private Produto produto;
+    @Column(name = "produto_id")
+    private Integer produto;
     
     @Column(name = "quantidade")
     private Integer quantidade;
 
-    public Venda getVenda() {
+    public Integer getVenda() {
         return venda;
     }
 
-    public void setVenda(Venda venda) {
+    public void setVenda(Integer venda) {
         this.venda = venda;
     }
 
-    public Produto getProduto() {
+    public Integer getProduto() {
         return produto;
     }
 
-    public void setProduto(Produto produto) {
+    public void setProduto(Integer produto) {
         this.produto = produto;
     }
 
+    
     public Integer getQuantidade() {
         return quantidade;
     }

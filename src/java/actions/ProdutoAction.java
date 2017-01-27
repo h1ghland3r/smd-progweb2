@@ -7,7 +7,11 @@ package actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import dao.ProdutoDAO;
+import dao.VendaDAO;
+import dao.VendaItemDAO;
+import entidades.Cliente;
 import entidades.Produto;
+import entidades.Venda;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +36,7 @@ public class ProdutoAction extends ActionSupport {
     public void setQuantidadeProduto(Integer quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
     }
-
+    
     public List<Produto> getListaSelecionados() {
         return listaSelecionados;
     }
@@ -59,6 +63,7 @@ public class ProdutoAction extends ActionSupport {
 
     public String execute() {
         ProdutoDAO dao = new ProdutoDAO();
+        VendaDAO dao2 = new VendaDAO();
         listaProdutos = dao.list();
         return "success";
     }
@@ -102,7 +107,27 @@ public class ProdutoAction extends ActionSupport {
     }
     
     public String addVenda(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        Cliente cliente = (Cliente) session.getAttribute("cliente");
 
+        VendaDAO dao2 = new VendaDAO();
+        Integer vendaId = dao2.add(cliente);        
+        Venda v = dao2.getById(vendaId);
+        
+        if (session.getAttribute("listaSelecionados") == null) {
+            listaSelecionados = new ArrayList<Produto>();
+            session.setAttribute("listaSelecionados", listaSelecionados);
+        } else {
+            listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
+        }
+        VendaItemDAO dao3= new VendaItemDAO();
+        for (Produto p : listaSelecionados) {
+            dao3.addVendaItem(p.getId(), vendaId, p.getQuantidade());
+        }
+
+        session.setAttribute("listaSelecionados", listaSelecionados);
+        execute();
         return "success";
     }
 }

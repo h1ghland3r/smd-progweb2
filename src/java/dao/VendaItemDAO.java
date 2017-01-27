@@ -21,18 +21,15 @@ public class VendaItemDAO {
     Session session;
     Transaction transaction;
     
-//    private VendaItem vendaItem;
-//    
-//    public VendaItem add(Venda venda) {
-//        Session session = Connection.getSession();
-//        Transaction t = session.beginTransaction();
-//        VendaItem i = new VendaItem();
-//        i.setVenda(venda);
-//        i.setProduto(produto);
-//        i.setQuantidade(produto.getQuantidade());
-//        Integer vendaItem = (Integer) session.save(i);
-//        t.commit();
-//        session.close();
-//        return vendaItem;
-//    }    
+    public void addVendaItem(Integer p, Integer v, int q) {
+        Session session = Connection.getSession();
+        Transaction t = session.beginTransaction();
+        Venda_Item i = new Venda_Item();
+        i.setProduto(p);
+        i.setVenda(v);
+        i.setQuantidade(q);
+        session.save(i);
+        t.commit();
+        session.close();
+    }
 }

@@ -10,6 +10,9 @@ import dao.AdministradorDAO;
 import entidades.Administrador;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
@@ -62,6 +65,10 @@ public class AdministradorAction extends ActionSupport {
     
     public String execute() {  
         if (dao.validacaoLogin(getLogin(), getSenha())) { 
+            HttpServletRequest request = ServletActionContext.getRequest();
+            HttpSession session = request.getSession();
+            Administrador a = dao.getByLogin(getLogin());
+            session.setAttribute("administrador", a);
             return "success";
         }
         return "login ou senha incorretos";
