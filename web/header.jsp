@@ -22,10 +22,5 @@
       <li><a href="adm.jsp" onclick="location.href = document.referrer; return false;"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>
       <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>  Sair</a></li>
     </ul>
-    
-                    
-                        
-                    
-    
   </div>
 </nav>

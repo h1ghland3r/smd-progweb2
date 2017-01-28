@@ -40,5 +40,11 @@
         <action name="AddVenda" class="actions.ProdutoAction" method="addVenda">
             <result name="success">/registro_sucesso.jsp</result>
         </action>
+        <action name="ListaVenda" class="actions.ProdutoAction" method="listaVendas">
+            <result name="success">/adm_vendas.jsp</result>
+        </action>
+        <action name="RemoveVenda" class="actions.ProdutoAction" method="removeVenda">
+            <result name="success">/adm_vendas.jsp</result>
+        </action>
     </package>
 </struts>

@@ -9,6 +9,7 @@ import entidades.Cliente;
 import entidades.Produto;
 import entidades.Venda;
 import java.util.Date;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.Connection;
@@ -54,5 +55,33 @@ public class VendaDAO {
         return venda;
     }
     
+    public List<Venda> list() {
+        
+        Session session = Connection.getSession();
+        Transaction tx = session.beginTransaction();
+        List<Venda> vendas = null;
+        
+        try {
+            vendas = (List<Venda>) session.createCriteria(Venda.class).list();
+        } catch (org.hibernate.HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        
+        tx.commit();
+        session.close();
+        return vendas;    
+    }
+    
+    public void delete(Integer id) {
+        Session session = Connection.getSession();
+        Transaction t = session.beginTransaction();
+        Venda v = (Venda) session.load(Venda.class, id);
+            if (v != null) {
+                session.delete(v);
+            }
+        t.commit();
+        session.close();
+    }
     
 }

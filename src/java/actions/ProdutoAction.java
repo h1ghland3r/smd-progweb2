@@ -26,9 +26,12 @@ public class ProdutoAction extends ActionSupport {
 
     private List<Produto> listaProdutos;
     private List<Produto> listaSelecionados;
+    private List<Venda> listaVendas;
+    private Integer codigoVenda;
     private Integer codigoProduto;
     private Integer quantidadeProduto;
-
+    private Venda venda = new Venda();
+    
     public Integer getQuantidadeProduto() {
         return quantidadeProduto;
     }
@@ -40,6 +43,22 @@ public class ProdutoAction extends ActionSupport {
     public List<Produto> getListaSelecionados() {
         return listaSelecionados;
     }
+
+    public List<Venda> getListaVendas() {
+        return listaVendas;
+    }
+
+    public void setListaVendas(List<Venda> listaVendas) {
+        this.listaVendas = listaVendas;
+    }
+
+    public Integer getCodigoVenda() {
+        return codigoVenda;
+    }
+
+    public void setCodigoVenda(Integer codigoVenda) {
+        this.codigoVenda = codigoVenda;
+    }  
 
     public void setListaSelecionados(List<Produto> listaSelecionados) {
         this.listaSelecionados = listaSelecionados;
@@ -61,9 +80,18 @@ public class ProdutoAction extends ActionSupport {
         this.listaProdutos = listaProdutos;
     }
 
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
+
+    // Métodos para Produtos: Listar, adicionar e remover da tabela do JSP
+    
     public String execute() {
         ProdutoDAO dao = new ProdutoDAO();
-        VendaDAO dao2 = new VendaDAO();
         listaProdutos = dao.list();
         return "success";
     }
@@ -106,6 +134,8 @@ public class ProdutoAction extends ActionSupport {
         return "success";
     }
     
+    // Métodos para Venda: Listar, adicionar e remover do banco de dados
+    
     public String addVenda(){
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
@@ -130,4 +160,22 @@ public class ProdutoAction extends ActionSupport {
         execute();
         return "success";
     }
+    
+    public String listaVendas() {
+        VendaDAO dao2 = new VendaDAO();
+        listaVendas = dao2.list();
+        return "success";
+    }
+    
+    public String removeVenda() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        Venda venda = (Venda) session.getAttribute("venda");
+       
+        VendaDAO dao2 = new VendaDAO();
+        Venda v = dao2.getById(codigoVenda);
+        dao2.delete(codigoVenda);
+        return "success";
+    }
+        
 }

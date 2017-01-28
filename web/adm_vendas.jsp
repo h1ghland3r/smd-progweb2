@@ -13,22 +13,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">PW2 - Trabalho Final</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
-        <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <%@include file="header_adm.jsp" %>
 
   <div class="container">
     <div class="row">
@@ -42,34 +27,25 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Data/Hora</th>
+                <th>Data</th>
                 <th>Cliente</th>
-                <th>Valor do Pedido</th>
                 <th>Ações</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>01</td>
-                <td>26/10/2016 - 16:19</td>
-                <td>Cliente 1</td>
-                <td>R$ 20,00</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></td>
-              </tr>
-              <tr>
-                <td>02</td>
-                <td>26/10/2016 - 18:31</td>
-                <td>Cliente 2</td>
-                <td>R$ 10,00</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>26/10/2016 - 23:05</td>
-                <td>Cliente 3</td>
-                <td>R$ 150,00</td>
-                <td><button type="submit" class="btn btn-danger">Remover</button></td>
-              </tr>
+            <tbody>         
+                <s:iterator value="listaVendas" var="f">
+                    <tr>
+                        <td><s:property value="#f.getId_venda()" /></td>
+                        <td><s:property value="#f.getData()" /></td>
+                        <td><s:property value="#f.getCliente()" /></td>
+                        <td>
+                            <s:url var="removerUrl" action="RemoveVenda">
+                                <s:param name="codigoVenda"><s:property value="#f.getId_venda()" /></s:param>
+                            </s:url>
+                            <s:a href="%{removerUrl}" ><s:submit class="btn btn-danger" value="Remover" /></s:a>
+                        </td>
+                    </tr>
+                </s:iterator>     
             </tbody>
           </table>
 

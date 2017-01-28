@@ -13,17 +13,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login_adm.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <%@include file="header_adm.jsp" %>
 
   <div class="container">
     <div class="row">
@@ -53,9 +43,8 @@
               </div>
               <div class="col-lg-6 text-center">
                 <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_vendas.jsp">
-                    <h6 class="">Consulta de Vendas</h6>
-                </a>
+                    <s:url action="ListaVenda.action" var="listarVendas" />
+                    <s:a href="%{listarVendas}"><h6>Consulta de Vendas</h6></s:a>
               </div>
             </div>
       </div>
