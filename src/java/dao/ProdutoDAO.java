@@ -5,12 +5,12 @@
  */
 package dao;
 
-import entidades.Cliente;
 import entidades.Produto;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
+import org.hibernate.query.Query;
 import util.Connection;
 
 /**
@@ -24,7 +24,7 @@ public class ProdutoDAO {
     
     private Produto produto;
     
-    public List<Produto> list() {
+    /*public List<Produto> list() {
         
         Session session = Connection.getSession();
         Transaction tx = session.beginTransaction();
@@ -41,6 +41,24 @@ public class ProdutoDAO {
         session.close();
         return produtos;
         
+    }*/
+    
+    public List<Produto> list() {
+
+        Session session = Connection.getSession();
+        session.beginTransaction();
+        List<Produto> produtos = null;
+
+        try {
+            produtos = (List<Produto>) session.createQuery("FROM Produto").list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+
+        session.getTransaction().commit();
+        session.close();
+        return produtos;
     }
     
         
@@ -61,6 +79,7 @@ public class ProdutoDAO {
         session.close();
         return produto;
     }
+   
     
     public Produto add(Produto produto) {
         Session session = Connection.getSession();
@@ -80,6 +99,20 @@ public class ProdutoDAO {
             }
         t.commit();
         session.close();
+    }
+    
+    public Produto update(Produto produto) {
+        
+        /*try{
+            Session session = Connection.getSession();
+            Transaction t = session.beginTransaction();
+            session.update(produto);
+        }catch(){
+        
+        }
+        t.commit();
+        session.close();*/
+        return produto;
     }
     
 }

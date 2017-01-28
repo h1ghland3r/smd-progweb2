@@ -67,24 +67,6 @@ public class ProdutoAction extends ActionSupport {
         listaProdutos = dao.list();
         return "success";
     }
-
-    public String addItem() {
-        ProdutoDAO dao = new ProdutoDAO();
-        Produto p = dao.getById(codigoProduto);
-        HttpServletRequest request = ServletActionContext.getRequest();
-        HttpSession session = request.getSession();
-        if (session.getAttribute("listaSelecionados") == null) {
-            listaSelecionados = new ArrayList<Produto>();
-            session.setAttribute("listaSelecionados", listaSelecionados);
-        } else {
-            listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
-        }
-        p.setQuantidade(quantidadeProduto);
-        listaSelecionados.add(p);
-        session.setAttribute("listaSelecionados", listaSelecionados);
-        execute();
-        return "success";
-    }
     
     public String removeItem() {
         HttpServletRequest request = ServletActionContext.getRequest();
