@@ -13,49 +13,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login_adm.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <%@include file="header_adm.jsp" %>
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-          <h2 class="text-center md-margin-top">Tela do Modo Administrador</h2>
-          <h4 class="text-center md-margin-top lg-margin">Bem vindo, <s:property value="login"/>.</h4>
+          <h2 class="text-center md-margin-top lg-margin">Tela do Modo Administrador</h2>
+            <!--<h4 class="text-center md-margin-top lg-margin">Bem vindo, <s:property value="login"/>.</h4>-->
             <div class="row">
               <div class="col-lg-6 text-center">
-                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <a href="cadastrarProduto.jsp">
-                    <h6 class="">Cadastro de Produtos</h6>
-                </a>
+                <i class="fa fa-barcode produtos-icone sm-margin" aria-hidden="true"></i>
+                    <s:url action="ListaProduto.action" var="listarProduto" />
+                    <s:a href="%{listarProduto}"><h6>Produtos</h6></s:a>
               </div>
               <div class="col-lg-6 text-center">
-                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_prod.jsp">
-                    <h6 class="">Consulta de Produtos</h6>
-                </a>
-              </div>
-            </div>
-            <div class="row lg-margin-top">
-              <div class="col-lg-6 text-center">
-                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_vendas.jsp">
-                    <h6 class="">Cadastro de Vendas</h6>
-                </a>
-              </div>
-              <div class="col-lg-6 text-center">
-                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_vendas.jsp">
-                    <h6 class="">Consulta de Vendas</h6>
-                </a>
+                <i class="fa fa-cart-arrow-down vendas-icone sm-margin" aria-hidden="true"></i>
+                    <s:url action="ListaVenda.action" var="listarVendas" />
+                    <s:a href="%{listarVendas}"><h6>Vendas</h6></s:a>
               </div>
             </div>
       </div>

@@ -11,8 +11,18 @@ body {
     background: url(../img/background.jpg) center no-repeat fixed;
 }
 
+#load {
+    display: none;
+}
+
 a {
     text-decoration: none;
+}
+
+.fa-check-circle-o{
+    color: #14fa14;
+    font-size: 15.5em;
+    opacity: 0.4;
 }
 
 a:hover {
@@ -36,6 +46,10 @@ a:hover {
 /* Navbar */
 .navbar {
     border-radius: 0;
+}
+
+#title {
+    padding-top: 50px;
 }
 
 /* Admin */
@@ -72,7 +86,7 @@ h6 {
     bottom: 0; 
     width:100%;
     margin-top: 10px;
-    padding: 25px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -87,6 +101,9 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
+    #title {
+        padding-top: 0;
+    }
 }
 
 @media only screen and (min-width:768px) and (max-width:991px){

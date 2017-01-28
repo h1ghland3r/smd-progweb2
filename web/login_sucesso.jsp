@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-lg-12 text-center lg-margin-top">
             <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-            <s:url action="ListaProduto.action" var="listarProdutos" />
+            <s:url action="Pedido.action" var="listarProdutos" />
             <s:a href="%{listarProdutos}"><h6>Realizar Pedido</h6></s:a>
         </div>
     </div>

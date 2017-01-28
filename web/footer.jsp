@@ -8,6 +8,7 @@
     <div id="rodape">
         <span>© 2017 Todos os Direitos Reservados. Trabalho Web II - SMD UFC</span>
     </div>
+    <script src="js/js-check.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     </body>
 </html>

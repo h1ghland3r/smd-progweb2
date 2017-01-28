@@ -19,8 +19,7 @@
                     <a class="navbar-brand" href="/ProgWeb2_TF/home"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Sistema de Vendas</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="adm.jsp" onclick="location.href = document.referrer; return false;"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>
-                </ul>
+                    <li><a href="login.jsp"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Início</a></li>                </ul>
             </div>
         </nav>
 
@@ -29,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="lg-margin-top">
-                        <h3 class="text-center sm-margin-top">Registro concluído com sucesso!</h3>
+                        <h3 class="text-center sm-margin-top">Seu cadastro foi registrado com sucesso!</h3>
                     </div>
                 </div>
             </div>

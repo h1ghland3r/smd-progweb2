@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cadastrarProduto
-    Created on : 15/01/2017, 11:24:16
+    Document   : updateProduto
+    Created on : 28/01/2017, 10:33:15
     Author     : italo
 --%>
 
@@ -19,29 +19,29 @@
 </head>
 
 <body>
-<%@include file="header_adm.jsp" %>
+<%@include file="header.jsp" %>
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h2 class="text-center">Cadastro de Produtos</h2>
+          <h2 class="text-center">Atualização de Estoque - Produtos</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
-            <s:form action="AddProduto" method="post">
+            <s:form action="UpdateProduto" method="post">
               <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <s:textfield name="descricao" id="descricao" class="form-control"/>
+                <s:textfield name="produto.descricao" id="descricao" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="quantidade">Quantidade:</label>
-                <s:textfield name="quantidade" id="quantidade" class="form-control"/>
+                <s:textfield name="produto.quantidade" id="quantidade" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="preco">Preço:</label>
-                <s:textfield name="preco" id="preco" class="form-control"/>
+                <s:textfield name="produto.preco" id="preco" class="form-control"/>
               </div>
               <div class="text-right">
-                <s:submit class="btn btn-default" value="Cadastrar"/>
+                <s:submit class="btn btn-success" value="Atualizar"/>
               </div>
             </s:form>
           </div>
@@ -51,3 +51,4 @@
   </div>
 
 <%@include file="footer.jsp" %>
+
