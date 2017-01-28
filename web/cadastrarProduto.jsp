@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<%@include file="header.jsp" %>
+<%@include file="header_adm.jsp" %>
 
   <div class="container">
     <div class="row">

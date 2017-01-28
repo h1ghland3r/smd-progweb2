@@ -18,32 +18,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-          <h2 class="text-center md-margin-top">Tela do Modo Administrador</h2>
-          <h4 class="text-center md-margin-top lg-margin">Bem vindo, <s:property value="login"/>.</h4>
+          <h2 class="text-center md-margin-top lg-margin">Tela do Modo Administrador</h2>
+            <!--<h4 class="text-center md-margin-top lg-margin">Bem vindo, <s:property value="login"/>.</h4>-->
             <div class="row">
               <div class="col-lg-6 text-center">
-                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <a href="cadastrarProduto.jsp">
-                    <h6 class="">Cadastro de Produtos</h6>
-                </a>
+                <i class="fa fa-barcode produtos-icone sm-margin" aria-hidden="true"></i>
+                    <s:url action="ListaProduto.action" var="listarProduto" />
+                    <s:a href="%{listarProduto}"><h6>Produtos</h6></s:a>
               </div>
               <div class="col-lg-6 text-center">
-                <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <s:url action="ListaProduto.action" var="listarProdutos" />
-                <s:a href="%{listarProdutos}"><h6>Consultar Produtos</h6></s:a>
-              </div>
-            </div>
-            <div class="row lg-margin-top">
-              <div class="col-lg-6 text-center">
-                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_vendas.jsp">
-                    <h6 class="">Cadastro de Vendas</h6>
-                </a>
-              </div>
-              <div class="col-lg-6 text-center">
-                <i class="fa fa-money vendas-icone sm-margin" aria-hidden="true"></i>
+                <i class="fa fa-cart-arrow-down vendas-icone sm-margin" aria-hidden="true"></i>
                     <s:url action="ListaVenda.action" var="listarVendas" />
-                    <s:a href="%{listarVendas}"><h6>Consulta de Vendas</h6></s:a>
+                    <s:a href="%{listarVendas}"><h6>Vendas</h6></s:a>
               </div>
             </div>
       </div>

@@ -88,11 +88,29 @@ public class ProdutoAction extends ActionSupport {
         this.venda = venda;
     }
 
-    // Métodos para Produtos: Listar, adicionar e remover da tabela do JSP
+    // Métodos para Produtos: Listar, adicionar e remover
     
     public String execute() {
         ProdutoDAO dao = new ProdutoDAO();
         listaProdutos = dao.list();
+        return "success";
+    }
+    
+    public String addItem() {
+        ProdutoDAO dao = new ProdutoDAO();
+        Produto p = dao.getById(codigoProduto);
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        if (session.getAttribute("listaSelecionados") == null) {
+            listaSelecionados = new ArrayList<Produto>();
+            session.setAttribute("listaSelecionados", listaSelecionados);
+        } else {
+            listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
+        }
+        p.setQuantidade(quantidadeProduto);
+        listaSelecionados.add(p);
+        session.setAttribute("listaSelecionados", listaSelecionados);
+        execute();
         return "success";
     }
     
@@ -116,7 +134,17 @@ public class ProdutoAction extends ActionSupport {
         return "success";
     }
     
-    // Métodos para Venda: Listar, adicionar e remover do banco de dados
+    public String removeProduto() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        Produto produto = (Produto) session.getAttribute("produto");
+       
+        ProdutoDAO dao = new ProdutoDAO();
+        dao.delete(codigoProduto);
+        return "success";
+    }
+    
+    // Métodos para Venda: Listar, adicionar e remover
     
     public String addVenda(){
         HttpServletRequest request = ServletActionContext.getRequest();
@@ -155,7 +183,6 @@ public class ProdutoAction extends ActionSupport {
         Venda venda = (Venda) session.getAttribute("venda");
        
         VendaDAO dao2 = new VendaDAO();
-        Venda v = dao2.getById(codigoVenda);
         dao2.delete(codigoVenda);
         return "success";
     }

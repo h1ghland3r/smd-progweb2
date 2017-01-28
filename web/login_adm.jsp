@@ -16,7 +16,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
+                    <a class="navbar-brand" href="/ProgWeb2_TF/home"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Sistema de Vendas</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="adm.jsp" onclick="location.href = document.referrer; return false;"><i class="fa fa-arrow-circle-o-left fa-fw" aria-hidden="true"></i>Voltar</a></li>

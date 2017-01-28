@@ -90,7 +90,7 @@ public class ProdutoDAO {
         return produto;
     }
     
-    public void delete(Produto id) {
+    public void delete(Integer id) {
         Session session = Connection.getSession();
         Transaction t = session.beginTransaction();
         Produto p = (Produto) session.load(Produto.class, id);

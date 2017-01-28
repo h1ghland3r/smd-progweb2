@@ -23,12 +23,12 @@
             <result name="success">/login_sucesso.jsp</result>
         </action>
         <action name="AddCliente" class="actions.AddClienteAction">
-            <result name="success">/registro_sucesso.jsp</result>
+            <result name="success">/registro_user_sucesso.jsp</result>
         </action>
         <action name="AddProduto" class="actions.AddProduto">
             <result name="success" type="redirect">/registro_sucesso.jsp</result>
         </action>
-        <action name="ListaProduto" class="actions.ProdutoAction" method="execute">
+        <action name="Pedido" class="actions.ProdutoAction" method="execute">
             <result name="success">/vendas.jsp</result>
         </action>
         <action name="AddItem" class="actions.ProdutoAction" method="addItem">
@@ -38,12 +38,15 @@
             <result name="success">/vendas.jsp</result>
         </action>
         <action name="AddVenda" class="actions.ProdutoAction" method="addVenda">
-            <result name="success">/registro_sucesso.jsp</result>
+            <result name="success">/venda_sucesso.jsp</result>
         </action>
         <action name="ListaProduto" class="actions.ProdutoAction" method="execute">
             <result name="success">/adm_prod.jsp</result>
         </action>
         <action name="UpdateProduto" class="actions.AddProduto" method="updateProduto">
+            <result name="success" type="redirect">/adm_prod.jsp</result>
+        </action>
+        <action name="RemoveProduto" class="actions.ProdutoAction" method="removeProduto">
             <result name="success" type="redirect">/adm_prod.jsp</result>
         </action>
         <action name="ListaVenda" class="actions.ProdutoAction" method="listaVendas">

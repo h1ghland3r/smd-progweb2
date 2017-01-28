@@ -18,25 +18,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Sistema de Vendas</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Início</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
-        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
-        <li><a href="adm_prod.jsp"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
-        <li><a href="cadastrarProduto.jsp"><i class="fa fa-barcode" aria-hidden="true"></i> Produtos</a></li>
-        <li><a href="adm_vendas.jsp"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Vendas</a></li>
-        <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <%@include file="header_adm.jsp" %>
 
   <div class="container">
     <div class="row">
@@ -69,7 +51,10 @@
                             
                             <s:a class="btn btn-info" href="updateProduto.jsp?idproduto=%{#f.getId()}">Atualizar</s:a>
                        
-                            <s:a href="#" ><s:submit class="btn btn-danger" value="Remover" /></s:a>
+                            <s:url var="removerUrl" action="RemoveProduto">
+                                <s:param name="codigoProduto"><s:property value="#f.getId()" /></s:param>
+                            </s:url>
+                            <s:a href="%{removerUrl}" ><s:submit class="btn btn-danger" value="Remover" /></s:a>
                         </td>
                     </tr>
                 </s:iterator>
