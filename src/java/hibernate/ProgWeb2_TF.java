@@ -26,23 +26,35 @@ public class ProgWeb2_TF {
         
         /* Administrador */
         Administrador a = new Administrador();
-        a.setNome("Joao");
-        a.setEmail("joao@gmail.com");
-        a.setLogin("Joao123");
-        a.setSenha("joao123");
+        a.setNome("railan");
+        a.setEmail("railan@gmail.com");
+        a.setLogin("railan");
+        a.setSenha("123");
         
         /* Cliente */
         Cliente c = new Cliente();
-        c.setNome("Cliente");
-        c.setEmail("Cliente1@gmail.com");
-        c.setLogin("Cliente");
-        c.setSenha("Cliente123");
+        c.setNome("italo");
+        c.setEmail("italo@gmail.com");
+        c.setLogin("italo");
+        c.setSenha("123");
         
-        /* Produto */
+        /* Produto 1 */
         Produto p = new Produto();
         p.setDescricao("PC");
         p.setPreco(500.0);
         p.setQuantidade(5);
+        
+        /* Produto 2 */
+        Produto p2 = new Produto();
+        p2.setDescricao("Teclado");
+        p2.setPreco(100.0);
+        p2.setQuantidade(10);
+        
+        /* Produto 2 */
+        Produto p3 = new Produto();
+        p3.setDescricao("Mouse");
+        p3.setPreco(50.0);
+        p3.setQuantidade(15);
         
         /* Venda */
         //Venda v = new Venda();
@@ -58,6 +70,8 @@ public class ProgWeb2_TF {
         session.save(a);
         session.save(c);
         session.save(p);
+        session.save(p2);
+        session.save(p3);
         //session.save(v);
         //session.save(i);
         

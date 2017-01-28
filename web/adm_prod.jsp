@@ -21,7 +21,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/ProgWeb2_TF/home">Sistema de Vendas</a>
+        <a class="navbar-brand" href="/ProgWeb2_TF/home"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Sistema de Vendas</a>
       </div>
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Início</a></li> -->
@@ -29,11 +29,11 @@
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Cadastrar</a></li>
         <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logar</a></li> -->
-        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
-        <li><a href="#"><i class="fa fa-barcode" aria-hidden="true"></i> Produtos</a></li>
-        <li><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Vendas</a></li>
+        <li><a href="adm_prod.jsp"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+        <li><a href="cadastrarProduto.jsp"><i class="fa fa-barcode" aria-hidden="true"></i> Produtos</a></li>
+        <li><a href="adm_vendas.jsp"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Vendas</a></li>
         <li><a href="login.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
       </ul>
     </div>
   </nav>
@@ -59,36 +59,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+                <s:iterator value="listaProdutos" var="f">
+                    <tr>
+                        <td><s:property value="#f.getId()" /></td>
+                        <td><s:property value="#f.getDescricao()" /></td>
+                        <td><s:property value="#f.getQuantidade()" /></td>
+                        <td><s:property value="#f.getPreco()" /></td>
+                        <td>
+                            
+                            <s:a class="btn btn-info" href="updateProduto.jsp?idproduto=%{#f.getId()}">Atualizar</s:a>
+                       
+                            <s:a href="#" ><s:submit class="btn btn-danger" value="Remover" /></s:a>
+                        </td>
+                    </tr>
+                </s:iterator>
+                
+              <!--<tr>
                 <td>01</td>
                 <td>Produto A</td>
                 <td>2</td>
                 <td>R$ 10,00</td>
                 <td>
+                  
                   <button type="submit" class="btn btn-info">Atualizar</button>
                   <button type="submit" class="btn btn-danger">Remover</button>
                 </td>
-              </tr>
-              <tr>
-                <td>02</td>
-                <td>Produto B</td>
-                <td>7</td>
-                <td>R$ 5,00</td>
-                <td>
-                  <button type="submit" class="btn btn-info">Atualizar</button>
-                  <button type="submit" class="btn btn-danger">Remover</button>
-                </td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Produto C</td>
-                <td>1</td>
-                <td>R$ 150,00</td>
-                <td>
-                  <button type="submit" class="btn btn-info">Atualizar</button>
-                  <button type="submit" class="btn btn-danger">Remover</button>
-                </td>
-              </tr>
+              </tr>-->
             </tbody>
           </table>
 

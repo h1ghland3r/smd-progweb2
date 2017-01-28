@@ -29,9 +29,8 @@
               </div>
               <div class="col-lg-6 text-center">
                 <i class="fa fa-industry produtos-icone sm-margin" aria-hidden="true"></i>
-                <a href="adm_prod.jsp">
-                    <h6 class="">Consulta de Produtos</h6>
-                </a>
+                <s:url action="ListaProduto.action" var="listarProdutos" />
+                <s:a href="%{listarProdutos}"><h6>Consultar Produtos</h6></s:a>
               </div>
             </div>
             <div class="row lg-margin-top">

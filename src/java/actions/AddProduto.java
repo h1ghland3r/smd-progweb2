@@ -28,6 +28,14 @@ public class AddProduto extends ActionSupport {
     private Integer quantidade;
     private Double preco;
 
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -52,8 +60,6 @@ public class AddProduto extends ActionSupport {
         this.quantidade = quantidade;
     }
 
-    
-
     public double getPreco() {
         return preco;
     }
@@ -68,6 +74,12 @@ public class AddProduto extends ActionSupport {
         produto.setPreco(preco);
         
         dao.add(produto);
+        return "success";
+    }
+    
+    public String updateProduto(){
+        
+        dao.update(produto);
         return "success";
     }
 }

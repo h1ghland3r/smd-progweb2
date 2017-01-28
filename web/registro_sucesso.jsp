@@ -19,7 +19,14 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="lg-margin-top">
-          <h4 class="text-center sm-margin-top">Registro concluído com sucesso.</h4>
+          <h3 class="text-center sm-margin-top">Registro concluído com sucesso!</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="lg-margin-top">
+            <h4 class="text-center sm-margin-top"><i class="fa fa-check-circle-o fa-5x" id="icon" aria-hidden="true"></i></h4>
         </div>
       </div>
     </div>

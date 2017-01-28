@@ -19,6 +19,12 @@ a {
     text-decoration: none;
 }
 
+.fa-check-circle-o{
+    color: #14fa14;
+    font-size: 15.5em;
+    opacity: 0.4;
+}
+
 a:hover {
 }
 
