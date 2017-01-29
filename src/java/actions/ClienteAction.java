@@ -78,5 +78,13 @@ public class ClienteAction extends ActionSupport {
         }
         return "login ou senha incorretos";
     }
+    
+    
+    public String logout(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return "success";
+    }
 
 }
