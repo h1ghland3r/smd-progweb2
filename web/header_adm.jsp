@@ -20,7 +20,8 @@
             <s:a href="%{listarVendas}"><i class="fa fa-cart-arrow-down fa-fw" aria-hidden="true"></i>Vendas</s:a>
         </li>
         <li><a href="adm.jsp"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>Administrador</a></li>
-        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
+        <li><s:url var="logout" action="Logout"></s:url>
+      <s:a href="%{logout}" ><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</s:a></li>
       </ul>
     </div>
   </nav>
