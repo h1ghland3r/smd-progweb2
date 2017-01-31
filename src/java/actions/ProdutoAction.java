@@ -31,7 +31,46 @@ public class ProdutoAction extends ActionSupport {
     private Integer codigoProduto;
     private Integer quantidadeProduto;
     private Venda venda = new Venda();
+
+    private Integer id;
+    private String descricao;
+    private Integer quantidade;
+    private Double preco;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
     
+    
+
     public Integer getQuantidadeProduto() {
         return quantidadeProduto;
     }
@@ -39,7 +78,7 @@ public class ProdutoAction extends ActionSupport {
     public void setQuantidadeProduto(Integer quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
     }
-    
+
     public List<Produto> getListaSelecionados() {
         return listaSelecionados;
     }
@@ -58,7 +97,7 @@ public class ProdutoAction extends ActionSupport {
 
     public void setCodigoVenda(Integer codigoVenda) {
         this.codigoVenda = codigoVenda;
-    }  
+    }
 
     public void setListaSelecionados(List<Produto> listaSelecionados) {
         this.listaSelecionados = listaSelecionados;
@@ -89,13 +128,23 @@ public class ProdutoAction extends ActionSupport {
     }
 
     // Métodos para Produtos: Listar, adicionar e remover
-    
     public String execute() {
         ProdutoDAO dao = new ProdutoDAO();
         listaProdutos = dao.list();
         return "success";
     }
-    
+
+    public String updateProduto() {
+        ProdutoDAO dao = new ProdutoDAO();
+        Produto p = dao.getById(getId());
+        p.setDescricao(descricao);
+        p.setQuantidade(quantidade);
+        p.setPreco(preco);
+        dao.update(p);
+        listaProdutos = dao.list();
+        return "success";
+    }
+
     public String addItem() {
         ProdutoDAO dao = new ProdutoDAO();
         Produto p = dao.getById(codigoProduto);
@@ -113,11 +162,11 @@ public class ProdutoAction extends ActionSupport {
         execute();
         return "success";
     }
-    
+
     public String removeItem() {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
-       
+
         if (session.getAttribute("listaSelecionados") != null) {
             List<Produto> listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
             for (int i = 0; i < listaSelecionados.size(); i++) {
@@ -129,39 +178,39 @@ public class ProdutoAction extends ActionSupport {
             this.listaSelecionados = listaSelecionados;
             session.setAttribute("listaSelecionados", listaSelecionados);
         }
-        
+
         execute();
         return "success";
     }
-    
+
     public String removeProduto() {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
         Produto produto = (Produto) session.getAttribute("produto");
-       
+
         ProdutoDAO dao = new ProdutoDAO();
         dao.delete(codigoProduto);
+        listaProdutos = dao.list();
         return "success";
     }
-    
+
     // Métodos para Venda: Listar, adicionar e remover
-    
-    public String addVenda(){
+    public String addVenda() {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
         VendaDAO dao2 = new VendaDAO();
-        Integer vendaId = dao2.add(cliente);        
+        Integer vendaId = dao2.add(cliente);
         Venda v = dao2.getById(vendaId);
-        
+
         if (session.getAttribute("listaSelecionados") == null) {
             listaSelecionados = new ArrayList<Produto>();
             session.setAttribute("listaSelecionados", listaSelecionados);
         } else {
             listaSelecionados = (List<Produto>) session.getAttribute("listaSelecionados");
         }
-        VendaItemDAO dao3= new VendaItemDAO();
+        VendaItemDAO dao3 = new VendaItemDAO();
         for (Produto p : listaSelecionados) {
             dao3.addVendaItem(p.getId(), vendaId, p.getQuantidade());
         }
@@ -170,21 +219,21 @@ public class ProdutoAction extends ActionSupport {
         execute();
         return "success";
     }
-    
+
     public String listaVendas() {
         VendaDAO dao2 = new VendaDAO();
         listaVendas = dao2.list();
         return "success";
     }
-    
+
     public String removeVenda() {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpSession session = request.getSession();
         Venda venda = (Venda) session.getAttribute("venda");
-       
+
         VendaDAO dao2 = new VendaDAO();
         dao2.delete(codigoVenda);
         return "success";
     }
-        
+
 }

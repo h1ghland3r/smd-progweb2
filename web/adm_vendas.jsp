@@ -37,7 +37,7 @@
                     <tr>
                         <td><s:property value="#f.getId_venda()" /></td>
                         <td><s:property value="#f.getData()" /></td>
-                        <td><s:property value="#f.getCliente()" /></td>
+                        <td><s:property value="#f.getCliente().nome" /></td>
                         <td>
                             <s:url var="removerUrl" action="RemoveVenda">
                                 <s:param name="codigoVenda"><s:property value="#f.getId_venda()" /></s:param>

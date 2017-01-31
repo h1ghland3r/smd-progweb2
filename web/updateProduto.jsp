@@ -28,17 +28,18 @@
           <h2 class="text-center">Atualização de Estoque - Produtos</h2>
           <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12 lg-margin-top">
             <s:form action="UpdateProduto" method="post">
+                <s:hidden name="id" />
               <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <s:textfield name="produto.descricao" id="descricao" class="form-control" />
+                <s:textfield name="descricao" id="descricao" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="quantidade">Quantidade:</label>
-                <s:textfield name="produto.quantidade" id="quantidade" class="form-control"/>
+                <s:textfield name="quantidade" id="quantidade" class="form-control"/>
               </div>
               <div class="form-group">
                 <label for="preco">Preço:</label>
-                <s:textfield name="produto.preco" id="preco" class="form-control"/>
+                <s:textfield name="preco" id="preco" class="form-control"/>
               </div>
               <div class="text-right">
                 <s:submit class="btn btn-success" value="Atualizar"/>
@@ -49,6 +50,8 @@
       </div>
     </div>
   </div>
-
+<script type="text/javascript">
+    document.getElementById("UpdateProduto_id").value = '<%= request.getParameter("idproduto")%>';
+</script>
 <%@include file="footer.jsp" %>
 

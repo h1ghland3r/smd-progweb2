@@ -18,12 +18,12 @@ import util.Connection;
  * @author italo
  */
 public class ProdutoDAO {
-    
+
     Session session;
     Transaction transaction;
-    
+
     private Produto produto;
-    
+
     /*public List<Produto> list() {
         
         Session session = Connection.getSession();
@@ -42,7 +42,6 @@ public class ProdutoDAO {
         return produtos;
         
     }*/
-    
     public List<Produto> list() {
 
         Session session = Connection.getSession();
@@ -60,27 +59,25 @@ public class ProdutoDAO {
         session.close();
         return produtos;
     }
-    
-        
+
     public Produto getById(Integer id) {
-        
+
         Session session = Connection.getSession();
         session.beginTransaction();
         Produto produto = null;
-        
+
         try {
             produto = (Produto) session.get(Produto.class, id);
         } catch (HibernateException e) {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-        
+
         session.getTransaction().commit();
         session.close();
         return produto;
     }
-   
-    
+
     public Produto add(Produto produto) {
         Session session = Connection.getSession();
         Transaction t = session.beginTransaction();
@@ -89,30 +86,27 @@ public class ProdutoDAO {
         session.close();
         return produto;
     }
-    
+
     public void delete(Integer id) {
         Session session = Connection.getSession();
         Transaction t = session.beginTransaction();
         Produto p = (Produto) session.load(Produto.class, id);
-            if (p != null) {
-                session.delete(p);
-            }
+        if (p != null) {
+            session.delete(p);
+        }
         t.commit();
         session.close();
     }
-    
+
     public Produto update(Produto produto) {
-        
-        /*try{
-            Session session = Connection.getSession();
-            Transaction t = session.beginTransaction();
-            session.update(produto);
-        }catch(){
-        
-        }
+
+        Session session = Connection.getSession();
+        Transaction t = session.beginTransaction();
+        session.update(produto);
+
         t.commit();
-        session.close();*/
+        session.close();
         return produto;
     }
-    
+
 }
