@@ -12,7 +12,8 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="login_sucesso.jsp"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Início</a></li>
-      <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</a></li>
+      <li><s:url var="logout" action="Logout"></s:url>
+      <s:a href="%{logout}" ><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Sair</s:a></li>
     </ul>
   </div>
 </nav>
