@@ -43,11 +43,11 @@
         <action name="ListaProduto" class="actions.ProdutoAction" method="execute">
             <result name="success">/adm_prod.jsp</result>
         </action>
-        <action name="UpdateProduto" class="actions.AddProduto" method="updateProduto">
-            <result name="success" type="redirect">/adm_prod.jsp</result>
+        <action name="UpdateProduto" class="actions.ProdutoAction" method="updateProduto">
+            <result name="success">/adm_prod.jsp</result>
         </action>
         <action name="RemoveProduto" class="actions.ProdutoAction" method="removeProduto">
-            <result name="success" type="redirect">/adm_prod.jsp</result>
+            <result name="success">/adm_prod.jsp</result>
         </action>
         <action name="ListaVenda" class="actions.ProdutoAction" method="listaVendas">
             <result name="success">/adm_vendas.jsp</result>

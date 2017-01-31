@@ -77,9 +77,4 @@ public class AddProduto extends ActionSupport {
         return "success";
     }
     
-    public String updateProduto(){
-        
-        dao.update(produto);
-        return "success";
-    }
 }
