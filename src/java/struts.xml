@@ -55,5 +55,11 @@
         <action name="RemoveVenda" class="actions.ProdutoAction" method="removeVenda">
             <result name="success">/adm_vendas.jsp</result>
         </action>
+        
+        
+        
+        <action name="Logout" class="actions.ClienteAction" method="logout">
+            <result name="success">/login.jsp</result>
+        </action>
     </package>
 </struts>

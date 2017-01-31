@@ -58,18 +58,6 @@
                         </td>
                     </tr>
                 </s:iterator>
-                
-              <!--<tr>
-                <td>01</td>
-                <td>Produto A</td>
-                <td>2</td>
-                <td>R$ 10,00</td>
-                <td>
-                  
-                  <button type="submit" class="btn btn-info">Atualizar</button>
-                  <button type="submit" class="btn btn-danger">Remover</button>
-                </td>
-              </tr>-->
             </tbody>
           </table>
 
